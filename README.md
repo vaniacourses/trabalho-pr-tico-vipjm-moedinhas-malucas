@@ -4,7 +4,7 @@
     <img src="https://img.shields.io/badge/Status-Em%20Andamento...-orange?style=for-the-badge"/>
 </p>
 
-Bem-vindo ao repositório do VIPJM Moedinhas Malucas, um software desenvolvido como parte do trabalho da disciplina Projeto de Software, semestre 2024.1, do curso de Ciência da Computação na Universidade Federal Fluminense (UFF). Este projeto visa criar um software para gerenciamento de finanças pessoais, oferecendo aos usuários uma maneira fácil e eficiente de controlar suas despesas e receitas.
+Bem-vindo ao repositório do projeto Gerenciador Finanças Pessoais, pertencente ao grupo VIPJM Moedinhas Malucas, um "software em desenvolvimento" como parte do trabalho da disciplina Projeto de Software, semestre 2024.1, do curso de Ciência da Computação na Universidade Federal Fluminense (UFF). Este projeto visa criar um software para gerenciamento de finanças pessoais, oferecendo aos usuários uma maneira fácil e eficiente de controlar suas despesas e receitas.
 
 <hr>
 
