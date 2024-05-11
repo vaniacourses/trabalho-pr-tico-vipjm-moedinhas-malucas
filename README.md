@@ -12,8 +12,8 @@ Bem-vindo ao repositório do projeto Gerenciador Finanças Pessoais, pertencente
 
 - IGOR QUINTES DOS SANTOS
 - JOÃO VICTOR LAGOS DE AGUIAR
-- MATHEUS [...]
-- PEDRO [...]
+- MATHEUS LOPES CARAPINA DO NASCIMENTO
+- PEDRO RIBEIRO FILHO
 - VITOR VIEIRA GOIS
 
 ## 📝 Sobre o Projeto
