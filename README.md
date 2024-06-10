@@ -33,4 +33,12 @@ O sistema Gerenciador de Finanças Pessoais é uma aplicação de software proje
 O projeto está sendo desenvolvido utilizando as seguintes tecnologias:
 
 - **Linguagem de programação [Ruby](https://www.ruby-lang.org/pt/):** Linguagem de programação dinâmica, de código aberto, com foco na simplicidade e na produtividade, utilizada no Framework Ruby on Rails.
+  - Versão: 3.3.2
 - **Framework [Ruby on Rails](https://rubyonrails.org/):** Framework de desenvolvimento web em Ruby.
+  - Versão: 7.1.3.4
+- **Banco de dados [SQLite3](https://www.sqlite.org/index.html):** Sistema de gerenciamento de banco de dados relacional.
+  - Versão: 1.4
+- **Node.js:** Ambiente de execução JavaScript construído no motor JavaScript V8 do Chrome.
+  - Versão: 20.14.0
+- **Yarn:** Gerenciador de pacotes para aplicativos JavaScript.
+  - Versão: 1.22.22
