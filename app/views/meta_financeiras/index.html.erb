@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Meta financeiras</h1>
+
+<div id="meta_financeiras">
+  <% @meta_financeiras.each do |meta_financeira| %>
+    <%= render meta_financeira %>
+    <p>
+      <%= link_to "Show this meta financeira", meta_financeira %>
+    </p>
+  <% end %>
+</div>
+
+<div class="row justify-content-center mt-5">
+  <%= link_to 'Nova meta financeira', new_meta_financeira_path, class: "btn btn-success btn-block", style:"width:10vw" %>
+</div>

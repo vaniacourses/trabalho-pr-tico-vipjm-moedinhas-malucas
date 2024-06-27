@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TesteRubyOnRails</title>
+    <title>Moedas</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,60 @@
   </head>
 
   <body>
-    <%= yield %>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary mb-5">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2331/2331903.png"
+          height="15"
+          alt="Moedas Malucas Logo"
+          loading="lazy"
+        />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/transacaos">Transações</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts">Contas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/clientes">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/meta_financeiras">Metas Financeiras</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/relatorio_financeiros">Relatórios Financeiros</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+  <%= yield %>
   </body>
 </html>

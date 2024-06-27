@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center mb-5">Clientes</h1>
+
+  <div class="row justify-content-center">
+    <div class="table-responsive">
+      <div class="row">
+        <% @clientes.each do |cliente| %>
+          <div class="col-md-4">
+            <div class="card mb-4 bg-secondary text-secondary-emphasys">
+              <div class="card-body">
+                <h5 class="card-title"><%= cliente.description %></h5>
+                <p class="card-text"><strong>Nome:</strong> <%= cliente.nome %></p>
+                <p class="card-text"><strong>E-mail:</strong> <%= cliente.email %></p>
+                <div class="button-group">
+                  <%= link_to 'Mostrar', cliente, class: "btn btn-primary mr-2 mt-3" %>
+                  <%= link_to 'Editar', edit_cliente_path(cliente), class: "btn btn-secondary mr-2 mt-3"%>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <%= link_to 'Novo cliente', new_cliente_path, class: "btn btn-success btn-block", style:"width:10vw" %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @relatorio_financeiro %>
+
+<div>
+  <%= link_to "Edit this relatorio financeiro", edit_relatorio_financeiro_path(@relatorio_financeiro) %> |
+  <%= link_to "Back to relatorio financeiros", relatorio_financeiros_path %>
+
+  <%= button_to "Destroy this relatorio financeiro", @relatorio_financeiro, method: :delete %>
+</div>

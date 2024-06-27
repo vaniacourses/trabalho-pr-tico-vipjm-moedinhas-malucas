@@ -1,0 +1,42 @@
+<%= form_with(model: meta_financeira) do |form| %>
+  <% if meta_financeira.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(meta_financeira.errors.count, "error") %> prohibited this meta_financeira from being saved:</h2>
+
+      <ul>
+        <% meta_financeira.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :descricao, style: "display: block" %>
+    <%= form.text_field :descricao, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :valor, style: "display: block" %>
+    <%= form.text_field :valor, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :prazo, style: "display: block" %>
+    <%= form.datetime_field :prazo, class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :cliente_id, style: "display: block" %>
+    <%= form.text_field :cliente_id, class:"form-control" %>
+  </div>
+
+  <div class="form-group text-center mt-4">
+    <%= form.submit class: "btn btn-success"%>
+  </div>
+<% end %>

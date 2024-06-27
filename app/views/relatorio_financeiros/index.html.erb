@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Relatorio financeiros</h1>
+
+<div id="relatorio_financeiros">
+  <% @relatorio_financeiros.each do |relatorio_financeiro| %>
+    <%= render relatorio_financeiro %>
+    <p>
+      <%= link_to "Show this relatorio financeiro", relatorio_financeiro %>
+    </p>
+  <% end %>
+</div>
+
+<div class="row justify-content-center mt-5">
+  <%= link_to 'Novo relatorio financeiro', new_relatorio_financeiro_path, class: "btn btn-success btn-block", style:"width:10vw" %>
+</div>
