@@ -5,7 +5,7 @@ class CreateMetaFinanceiras < ActiveRecord::Migration[7.1]
       t.string :descricao
       t.float :valor
       t.datetime :prazo
-      t.references :cliente, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

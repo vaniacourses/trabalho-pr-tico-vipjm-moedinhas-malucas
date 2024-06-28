@@ -65,6 +65,6 @@ class MetaFinanceirasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meta_financeira_params
-      params.require(:meta_financeira).permit(:nome, :descricao, :valor, :prazo, :cliente_id)
+      params.require(:meta_financeira).permit(:nome, :descricao, :valor, :prazo, :user_id)
     end
 end
