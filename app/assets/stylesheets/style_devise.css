@@ -61,6 +61,7 @@ form .field {
     width: 70%;
 }
 
+/*
 form input[type="email"],
 form input[type="password"] {
     width: 100%;
@@ -71,6 +72,7 @@ form input[type="password"] {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.26);
     font-size: 14px;
 }
+    */
 
 form .main-action {
     font-weight: bolder;
