@@ -13,10 +13,10 @@
 ActiveRecord::Schema[7.1].define(version: 2024_06_28_011927) do
   create_table "accounts", force: :cascade do |t|
     t.float "saldo"
-    t.integer "cliente_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cliente_id"], name: "index_accounts_on_cliente_id"
+    t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
   create_table "meta_financeiras", force: :cascade do |t|
@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_28_011927) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "accounts", "clientes"
+  add_foreign_key "accounts", "users"
   add_foreign_key "meta_financeiras", "clientes"
   add_foreign_key "relatorio_financeiros", "transacoes", column: "transacoes_id"
   add_foreign_key "transacaos", "accounts"
