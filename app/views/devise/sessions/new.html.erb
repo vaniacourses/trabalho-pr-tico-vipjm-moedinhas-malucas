@@ -1,26 +1,58 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exemplo de Tela de Login">
+    <title>Login</title>
+    
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <%= stylesheet_link_tag 'style_devise'%>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <script src="https://kit.fontawesome.com/6e5ef07d9f.js" crossorigin="anonymous"></script>
+</head>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<body>
+    <div id="box"><!-- CAIXA -->
+        <div id="title">
+            <h1>LOGIN</h1>
+        </div>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
+            <div class="field">
+                <%= f.email_field :email, placeholder: "Insira seu email", autofocus: true, class: 'form-control', autocomplete: "email" %>
+            </div>
+
+            <div class="field">  
+                <%= f.password_field :password, placeholder: "Insira sua senha", class: 'form-control', autocomplete: "current-password" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+                <div class="field">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me, "Lembrar-me" %>
+                </div>
+            <% end %>
+
+            <div class="actions main-action">
+                <%= f.submit "ENTRAR", id: "submit" %>
+            </div>
+        <% end %>
+        
+        <div class="actions">
+            <%= render "devise/shared/links" %>
+        </div>
+
+        <div id="alternative-login">
+            <p>Ou entre usando</p>
+            <nav>
+                <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a class="twitter" href="#"><i class="fa-brands fa-twitter-square"></i></a>
+                <a class="google-plus" href="#"><i class="fa-brands fa-google-plus"></i></a>
+            </nav>
+        </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
+</html>
