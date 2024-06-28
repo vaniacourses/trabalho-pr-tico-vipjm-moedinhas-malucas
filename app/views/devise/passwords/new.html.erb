@@ -1,16 +1,40 @@
-<h2>Forgot your password?</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exemplo de Tela de Cadastro">
+    <title>Forgot your password?</title>
+    
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <%= stylesheet_link_tag 'style_devise'%>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <script src="https://kit.fontawesome.com/6e5ef07d9f.js" crossorigin="anonymous"></script>
+</head>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+<body>
+    <div id="box"><!-- CAIXA -->
+        <div id="title">
+            <h1>FORGOT YOUR PASSWORD?</h1>
+        </div>
 
-<%= render "devise/shared/links" %>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "password-form", method: :post }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="field">
+                <%= f.email_field :email, autofocus: true, class: 'form-control', autocomplete: "email", placeholder: "Insira seu email" %>
+            </div>
+
+            <div class="actions main-action">
+                <%= f.submit "ENVIAR INSTRUÇÕES", id: "submit" %>
+            </div>
+        <% end %>
+        
+        <div class="actions">
+            <%= render "devise/shared/links" %>
+        </div>
+    </div>
+</body>
+</html>
