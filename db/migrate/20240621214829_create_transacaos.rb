@@ -5,7 +5,7 @@ class CreateTransacaos < ActiveRecord::Migration[7.1]
       t.float :valor
       t.datetime :dataHora
       t.string :categoria
-      t.references :cliente, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.references :account, null: false, foreign_key: true
 
       t.timestamps

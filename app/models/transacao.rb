@@ -1,4 +1,4 @@
 class Transacao < ApplicationRecord
-  belongs_to :cliente
+  belongs_to :user
   belongs_to :account
 end

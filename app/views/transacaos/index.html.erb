@@ -1,7 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="container text-center">
-  <p>Bem-vindo, <%= current_user.name %> (<%= current_user.email %>)</p>
 
   <h1 class="text-center mb-5">Transações</h1>
 
@@ -12,12 +11,13 @@
           <div class="col-md-4">
             <div class="card mb-4 bg-secondary text-secondary-emphasys">
               <div class="card-body">
+              <p class="card-text"><strong>Tipo:</strong> <%= transacao.tipo %></p>
                 <p class="card-text"><strong>Valor:</strong> <%= transacao.valor %></p>
-                <p class="card-text"><strong>Valor:</strong> <%= transacao.categoria %></p>
+                <p class="card-text"><strong>Ctegoria:</strong> <%= transacao.categoria %></p>
                 <div class="button-group">
                   <%= link_to 'Mostrar', transacao, class: "btn btn-primary mr-2 mt-3" %>
                   <%= link_to 'Editar', edit_transacao_path(transacao), class: "btn btn-secondary mr-2 mt-3"%>
-                  <%= button_to 'Excluir', carona_path(transacao), method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger mr-2 mt-3" %>
+                  <%= button_to 'Excluir', transacao_path(transacao), method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger mr-2 mt-3" %>
                 </div>
               </div>
             </div>

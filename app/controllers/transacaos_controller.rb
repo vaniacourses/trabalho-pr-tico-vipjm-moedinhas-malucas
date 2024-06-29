@@ -66,6 +66,6 @@ class TransacaosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transacao_params
-      params.require(:transacao).permit(:tipo, :valor, :dataHora, :categoria, :cliente_id, :account_id)
+      params.require(:transacao).permit(:tipo, :valor, :dataHora, :categoria, :user_id, :account_id)
     end
 end

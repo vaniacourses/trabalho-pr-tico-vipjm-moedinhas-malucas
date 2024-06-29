@@ -42,12 +42,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_28_011927) do
     t.float "valor"
     t.datetime "dataHora"
     t.string "categoria"
-    t.integer "cliente_id", null: false
+    t.integer "user_id", null: false
     t.integer "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_transacaos_on_account_id"
-    t.index ["cliente_id"], name: "index_transacaos_on_cliente_id"
+    t.index ["user_id"], name: "index_transacaos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,5 +67,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_28_011927) do
   add_foreign_key "meta_financeiras", "users"
   add_foreign_key "relatorio_financeiros", "transacoes", column: "transacoes_id"
   add_foreign_key "transacaos", "accounts"
-  add_foreign_key "transacaos", "clientes"
+  add_foreign_key "transacaos", "users"
 end
