@@ -4,7 +4,7 @@ class TransacaosController < ApplicationController
 
   # GET /transacaos or /transacaos.json
   def index
-    @transacaos = Transacao.all
+    @transacaos = current_user.transacaos # Filtra as transações do usuário atual
   end
 
   # GET /transacaos/1 or /transacaos/1.json
