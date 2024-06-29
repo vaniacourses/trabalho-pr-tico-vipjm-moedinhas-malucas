@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container">
+<div class="container text-center">
+  <p>Bem-vindo, <%= current_user.name %> (<%= current_user.email %>)</p>
+
   <h1 class="text-center mb-5">Transações</h1>
 
   <div class="row justify-content-center">

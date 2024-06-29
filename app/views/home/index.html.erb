@@ -1,0 +1,88 @@
+<h1 class= "text-center">Dashboard</h1>
+<div class="dashboard d-flex justify-content-center align-items-center">
+  <div class="box">
+    <%= link_to accounts_path, class: 'box-link' do %>
+      <div class="box-content">
+        <h2>Contas</h2>
+        <p>Gerencie suas contas</p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="box">
+    <%= link_to transacaos_path, class: 'box-link' do %>
+      <div class="box-content">
+        <h2>Transações</h2>
+        <p>Visualize suas transações</p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="box">
+    <%= link_to meta_financeiras_path, class: 'box-link' do %>
+      <div class="box-content">
+        <h2>Metas Financeiras</h2>
+        <p>Defina suas metas financeiras</p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="box">
+    <%= link_to relatorio_financeiros_path, class: 'box-link' do %>
+      <div class="box-content">
+        <h2>Relatórios Financeiros</h2>
+        <p>Veja seus relatórios financeiros</p>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br><br>
+<div style="text-align: center;">
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-block", style: "background-color: red; color: white;" %>
+</div>
+
+
+
+<style>
+  .dashboard {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .box {
+    width: 350px;
+    height: 200px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+
+  .box-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .box h2 {
+    margin: 0;
+  }
+
+  .box p {
+    margin: 10px 0 0 0;
+    color: #777;
+  }
+</style>

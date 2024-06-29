@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users, controllers: {
         sessions: 'users/sessions',
         registrations: 'users/registrations'
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   # root "transacaos#index"
 
   authenticated :user do # Se estiver autenticado, entre no root que é "rails/health#show"
-    root to: 'transacaos#index', as: :authenticated_root
+    root to: 'home#index', as: :authenticated_root
   end
   root to: redirect('/users/sign_in') # Se NÃO estiver autenticado, redirecione para o login
 end
