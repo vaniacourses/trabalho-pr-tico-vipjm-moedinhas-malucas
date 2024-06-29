@@ -24,11 +24,14 @@ class AccountsController < ApplicationController
   # POST /accounts
   def create
     @account = current_user.accounts.build(account_params)
-
-    if @account.save
-      redirect_to @account, notice: 'Conta criada com sucesso.'
-    else
-      render :new
+    respond_to do |format|
+      if @account.save
+        format.html { redirect_to @account, notice: 'Account was successfully created.' }
+        format.json { render :show, status: :created, location: @account }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @account.errors, status: :unprocessable_entity }
+      end
     end
   end
 

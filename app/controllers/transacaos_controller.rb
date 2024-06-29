@@ -22,18 +22,18 @@ class TransacaosController < ApplicationController
 
   # POST /transacaos or /transacaos.json
   def create
-    @transacao = Transacao.new(transacao_params)
-
+    @transacao = current_user.transacaos.build(transacao_params)
+  
     respond_to do |format|
       if @transacao.save
-        format.html { redirect_to transacao_url(@transacao), notice: "Transacao was successfully created." }
+        format.html { redirect_to @transacao, notice: 'Transacao was successfully created.' }
         format.json { render :show, status: :created, location: @transacao }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @transacao.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end  
 
   # PATCH/PUT /transacaos/1 or /transacaos/1.json
   def update
