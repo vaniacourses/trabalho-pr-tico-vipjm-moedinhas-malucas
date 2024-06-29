@@ -4,8 +4,8 @@ class AccountsController < ApplicationController
 
   # GET /accounts or /accounts.json
   def index
-    @accounts = Account.all
-  end
+    @accounts = current_user.accounts
+  end  
 
   # GET /accounts/1 or /accounts/1.json
   def show
@@ -21,17 +21,14 @@ class AccountsController < ApplicationController
   end
 
   # POST /accounts or /accounts.json
+  # POST /accounts
   def create
-    @account = Account.new(account_params)
+    @account = current_user.accounts.build(account_params)
 
-    respond_to do |format|
-      if @account.save
-        format.html { redirect_to account_url(@account), notice: "Account was successfully created." }
-        format.json { render :show, status: :created, location: @account }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @account.errors, status: :unprocessable_entity }
-      end
+    if @account.save
+      redirect_to @account, notice: 'Conta criada com sucesso.'
+    else
+      render :new
     end
   end
 
@@ -66,6 +63,6 @@ class AccountsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def account_params
-      params.require(:account).permit(:saldo, :user_id)
+      params.require(:account).permit(:saldo)
     end
 end
