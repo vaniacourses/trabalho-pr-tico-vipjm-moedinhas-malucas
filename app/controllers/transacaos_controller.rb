@@ -4,7 +4,11 @@ class TransacaosController < ApplicationController
 
   # GET /transacaos or /transacaos.json
   def index
-    @transacaos = current_user.transacaos # Filtra as transações do usuário atual
+    if params[:account_id].present?
+      @transacaos = current_user.transacaos.where(account_id: params[:account_id])
+    else
+      @transacaos = current_user.transacaos
+    end
   end
 
   # GET /transacaos/1 or /transacaos/1.json
