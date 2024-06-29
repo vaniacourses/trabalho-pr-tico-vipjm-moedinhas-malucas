@@ -1,5 +1,6 @@
 class RelatorioFinanceirosController < ApplicationController
   before_action :set_relatorio_financeiro, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /relatorio_financeiros or /relatorio_financeiros.json
   def index

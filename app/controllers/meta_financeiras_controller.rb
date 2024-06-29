@@ -1,5 +1,6 @@
 class MetaFinanceirasController < ApplicationController
   before_action :set_meta_financeira, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /meta_financeiras or /meta_financeiras.json
   def index

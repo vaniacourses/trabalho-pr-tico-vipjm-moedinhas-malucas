@@ -12,5 +12,9 @@
 </div>
 
 <div class="row justify-content-center mt-5">
-  <%= link_to 'Nova meta financeira', new_meta_financeira_path, class: "btn btn-success btn-block", style:"width:10vw" %>
+  <%= link_to 'Nova meta financeira', new_meta_financeira_path, class: "btn btn-success btn-block", style:"width:15vw; background-color: green; color: white;" %>
+</div>
+<br><br>
+<div style="text-align: center;">
+  <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-block", style: "background-color: red; color: white;" %>
 </div>
