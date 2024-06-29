@@ -1,10 +1,9 @@
-<%= form_with(model: transacao) do |form| %>
-  <% if transacao.errors.any? %>
+<%= form_with(model: @transacao) do |form| %>
+  <% if @transacao.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(transacao.errors.count, "error") %> prohibited this transacao from being saved:</h2>
-
+      <h2><%= pluralize(@transacao.errors.count, "error") %> prohibited this transacao from being saved:</h2>
       <ul>
-        <% transacao.errors.each do |error| %>
+        <% @transacao.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -47,57 +46,49 @@
 <% end %>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const tipoSelect = document.getElementById('tipo-select');
-    const categoriaSelect = document.getElementById('categoria-select');
-    const categoriaSelectContainer = document.getElementById('categoria-select-container');
+  const tipoSelect = document.getElementById('tipo-select');
+  const categoriaSelect = document.getElementById('categoria-select');
+  
+  const despesaOptions = [
+    ['Transporte'],
+    ['Alimentação'],
+    ['Educação'],
+    ['Saúde'],
+    ['Aluguel'],
+    ['Condomínio'],
+    ['Outros']
+  ];
 
-    // Opções de categoria para Despesa e Receita
-    const despesaOptions = [
-      ['Transporte'],
-      ['Alimentação'],
-      ['Educação'],
-      ['Saúde'],
-      ['Aluguel'],
-      ['Condomínio'],
-      ['Outros']
-    ];
+  const receitaOptions = [
+    ['Salário'],
+    ['Investimento'],
+    ['Renda Extra'],
+    ['Outros']
+  ];
 
-    const receitaOptions = [
-      ['Salário'],
-      ['Investimento'],
-      ['Renda Extra'],
-      ['Outros']
-    ];
+  function updateCategoriaOptions() {
+    const selectedTipo = tipoSelect.value;
+    let options = [];
 
-    // Função para atualizar as opções do select de categoria
-    function updateCategoriaOptions() {
-      const selectedTipo = tipoSelect.value;
-      let options = [];
-
-      if (selectedTipo === 'Despesa') {
-        options = despesaOptions;
-      } else if (selectedTipo === 'Receita') {
-        options = receitaOptions;
-      }
-
-      // Limpa as opções atuais
-      categoriaSelect.innerHTML = '';
-
-      // Adiciona as novas opções
-      options.forEach(option => {
-        const [label, value = label] = option;
-        const optionElement = document.createElement('option');
-        optionElement.textContent = label;
-        optionElement.value = value;
-        categoriaSelect.appendChild(optionElement);
-      });
+    if (selectedTipo === 'Despesa') {
+      options = despesaOptions;
+    } else if (selectedTipo === 'Receita') {
+      options = receitaOptions;
     }
 
-    // Chamada inicial para definir as opções base no valor inicial do tipo
-    updateCategoriaOptions();
+    categoriaSelect.innerHTML = ''; // Limpa as opções atuais
 
-    // Event listener para detectar mudança no select de tipo e atualizar as opções de categoria
-    tipoSelect.addEventListener('change', updateCategoriaOptions);
-  });
+    options.forEach(option => {
+      const [label, value = label] = option;
+      const optionElement = document.createElement('option');
+      optionElement.textContent = label;
+      optionElement.value = value;
+      categoriaSelect.appendChild(optionElement);
+    });
+  }
+
+  tipoSelect.addEventListener('change', updateCategoriaOptions);
+
+  // Chamada inicial para definir as opções base no valor inicial do tipo
+  updateCategoriaOptions();
 </script>
