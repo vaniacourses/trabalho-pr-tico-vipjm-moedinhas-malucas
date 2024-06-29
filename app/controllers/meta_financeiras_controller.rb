@@ -4,7 +4,7 @@ class MetaFinanceirasController < ApplicationController
 
   # GET /meta_financeiras or /meta_financeiras.json
   def index
-    @meta_financeiras = MetaFinanceira.all
+    @meta_financeiras = current_user.meta_financeiras
   end
 
   # GET /meta_financeiras/1 or /meta_financeiras/1.json
@@ -22,11 +22,11 @@ class MetaFinanceirasController < ApplicationController
 
   # POST /meta_financeiras or /meta_financeiras.json
   def create
-    @meta_financeira = MetaFinanceira.new(meta_financeira_params)
-
+    @meta_financeira = current_user.meta_financeiras.build(meta_financeira_params)
+  
     respond_to do |format|
       if @meta_financeira.save
-        format.html { redirect_to meta_financeira_url(@meta_financeira), notice: "Meta financeira was successfully created." }
+        format.html { redirect_to @meta_financeira, notice: 'meta_financeira was successfully created.' }
         format.json { render :show, status: :created, location: @meta_financeira }
       else
         format.html { render :new, status: :unprocessable_entity }
