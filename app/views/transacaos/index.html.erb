@@ -29,14 +29,35 @@
   </div>
     </div>
   </div>
+
+  
   <div class="row justify-content-center mt-5">
-  <div class="row justify-content-center mt-5">
-    <%= link_to 'Nova transação', new_transacao_path, class: "btn btn-success btn-block", style:"width:15vw; background-color: green; color: white;" %>
-  </div>
-  </div>
-  <br>
-  <div style="text-align: center;">
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-block", style: "background-color: red; color: white;" %>
+    <%= link_to 'Nova transação', new_transacao_path, class: "btn btn-success btn-block custom-nova-transacao-btn", style:"width:15vw; background-color: green; color: white; border: 2px solid transparent; transition: all 0.3s ease;" %>
   </div>
 
+  <br>
+  <div style="text-align: center;">
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-block custom-logout-btn", style: "background-color: red; color: white; border: 2px solid transparent; transition: all 0.3s ease;" %>
+  </div>
+
+
+
+
 </div>
+
+<style>
+
+  /* Efeito ao passar o mouse */
+  .custom-nova-transacao-btn:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+    border-radius: 50px;
+    box-shadow: 0px 1px 5px green;
+  }
+
+  .custom-logout-btn:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+    border-radius: 50px;
+    box-shadow: 0px 1px 5px red;
+  }
+
+</style>

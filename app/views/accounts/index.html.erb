@@ -12,9 +12,24 @@
 </div>
 
 <div class="row justify-content-center mt-5">
-  <%= link_to 'Nova conta', new_account_path, class: "btn btn-success btn-block", style:"width:15vw; background-color: green; color: white;" %>
+  <%= link_to 'Nova conta', new_account_path, class: "btn btn-success btn-block custom-nova-conta-btn", style:"width:15vw; background-color: green; color: white; border: 2px solid transparent; transition: all 0.3s ease;" %>
 </div>
 <br><br>
 <div style="text-align: center;">
-  <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-block", style: "background-color: red; color: white;" %>
+  <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-block custom-logout-btn", style:"background-color: red; color: white; border: 2px solid transparent; transition: all 0.3s ease;" %>
 </div>
+
+<style>
+  /* Efeito ao passar o mouse */
+  .custom-nova-conta-btn:hover {
+    transform: scale(1.1); 
+    border-radius: 50px;
+    box-shadow: 0px 1px 5px green;
+  }
+  .custom-logout-btn:hover {
+    transform: scale(1.1); 
+    border-radius: 50px;
+    box-shadow: 0px 1px 5px red;
+  }
+
+</style>
