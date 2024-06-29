@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_06_28_011927) do
   create_table "accounts", force: :cascade do |t|
+    t.string "nomeConta"
     t.float "saldo"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false

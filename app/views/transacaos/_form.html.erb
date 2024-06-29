@@ -32,8 +32,11 @@
 
   <div>
     <%= form.label :account_id, style: "display: block" %>
-    <%= form.text_field :account_id, class:"form-control" %>
+    <%= form.collection_select :account_id, current_user.accounts, :id, :nomeConta, { prompt: 'Selecione uma conta' }, { class: "form-control" } %>
   </div>
+
+
+
 
   <div class="form-group text-center mt-4">
     <%= form.submit class: "btn btn-success" %>
@@ -88,3 +91,4 @@
   // Chamada inicial para definir as opções base no valor inicial do tipo
   updateCategoriaOptions();
 </script>
+

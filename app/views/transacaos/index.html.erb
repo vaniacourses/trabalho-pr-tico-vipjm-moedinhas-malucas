@@ -11,9 +11,10 @@
           <div class="col-md-4">
             <div class="card mb-4 bg-secondary text-secondary-emphasys">
               <div class="card-body">
+              <p class="card-text"><strong>Nome da Conta:</strong> <%= transacao.account.nomeConta %></p>
               <p class="card-text"><strong>Tipo:</strong> <%= transacao.tipo %></p>
                 <p class="card-text"><strong>Valor:</strong> <%= transacao.valor %></p>
-                <p class="card-text"><strong>Ctegoria:</strong> <%= transacao.categoria %></p>
+                <p class="card-text"><strong>Categoria:</strong> <%= transacao.categoria %></p>
                 <div class="button-group">
                   <%= link_to 'Mostrar', transacao, class: "btn btn-primary mr-2 mt-3" %>
                   <%= link_to 'Editar', edit_transacao_path(transacao), class: "btn btn-secondary mr-2 mt-3"%>
