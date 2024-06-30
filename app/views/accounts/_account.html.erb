@@ -7,12 +7,7 @@
 
     <p>
       <strong>Saldo:</strong>
-      <%= account.saldo %>
-    </p>
-
-    <p>
-      <strong>Cliente:</strong>
-      <%= account.user_id %>
+      <%= number_to_currency(account.saldo, unit: "R$", precision: 2, delimiter: ".", separator: ",") %>
     </p>
   </div>
 </div>

@@ -12,17 +12,12 @@
 
     <p>
       <strong>Valor:</strong>
-      <%= meta_financeira.valor %>
+      <%= number_to_currency(meta_financeira.valor, unit: "R$", precision: 2, delimiter: ".", separator: ",") %>
     </p>
 
     <p>
       <strong>Prazo:</strong>
       <%= meta_financeira.prazo %>
-    </p>
-
-    <p>
-      <strong>user:</strong>
-      <%= meta_financeira.user_id %>
     </p>
 
   </div>

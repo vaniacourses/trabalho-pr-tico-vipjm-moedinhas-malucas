@@ -25,8 +25,8 @@
           <div class="account-list">
               <div class="account-item">
                 <p class="card-text"><strong>Nome da Conta:</strong> <%= transacao.account.nomeConta %></p>
-                <p class="card-text"><strong>Tipo:</strong> <%= transacao.tipo %></p>
-                <p class="card-text"><strong>Valor:</strong> <%= transacao.valor %></p>
+                <p class="card-text" style="<%= transacao.tipo.downcase == 'receita' ? 'color: green;' : 'color: red;' %>"><strong>Tipo:</strong> <%= transacao.tipo %></p>
+                <p class="card-text"><strong>Valor:</strong> <%= number_to_currency(transacao.valor, unit: "R$", precision: 2, delimiter: ".", separator: ",") %></p>
                 <p class="card-text"><strong>Categoria:</strong> <%= transacao.categoria %></p>
                 <div class="account-actions">
                   <%= link_to 'Mostrar', transacao, class: "action-button" %>
