@@ -1,3 +1,10 @@
+<!-- Botão circular de HOME -->
+<div style="position: fixed; up: 20px; left: 20px;">
+  <%= link_to root_path, class: "home-button" do %>
+    <%= image_tag("home.jpg", alt: "Home", style: "width: 50px; height: 50px; border-radius: 50%;") %>
+  <% end %>
+</div>
+
 <p style="color: green"><%= notice %></p>
 
 <h1 class="page-title">Contas</h1>
@@ -13,11 +20,12 @@
   <% end %>
 </div>
 
-
 <div class="row justify-content-center mt-5">
   <%= link_to 'Nova conta', new_account_path, class: "btn btn-success btn-block custom-nova-conta-btn", style:"width:15vw; background-color: green; color: white; border: 2px solid transparent; transition: all 0.3s ease;" %>
 </div>
+
 <br><br>
+
 <div style="text-align: center;">
   <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-block custom-logout-btn", style:"background-color: red; color: white; border: 2px solid transparent; transition: all 0.3s ease;" %>
 </div>

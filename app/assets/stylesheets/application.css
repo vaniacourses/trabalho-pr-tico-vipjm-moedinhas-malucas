@@ -12,6 +12,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 :root,
 [data-bs-theme=light] {
   --bs-blue: #378dfc;
