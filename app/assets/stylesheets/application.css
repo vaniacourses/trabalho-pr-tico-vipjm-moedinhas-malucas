@@ -12885,6 +12885,9 @@ textarea.form-control-lg {
 }
 
 /* Efeito ao passar o mouse */
+.custom-nova-mf-btn:hover,
+.custom-nova-rf-btn:hover,
+.custom-nova-transacao-btn:hover,
 .custom-nova-conta-btn:hover {
   transform: scale(1.1); 
   border-radius: 50px;
