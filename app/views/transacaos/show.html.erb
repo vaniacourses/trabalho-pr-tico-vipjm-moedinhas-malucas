@@ -2,9 +2,9 @@
 
 <%= render @transacao %>
 
-<div>
-  <%= link_to "Edit this transacao", edit_transacao_path(@transacao) %> |
-  <%= link_to "Back to transacaos", transacaos_path %>
+<div class="account-actions">
+  <%= link_to "Editar", edit_transacao_path(@transacao), class: "action-button" %> |
+  <%= link_to "Voltar", transacaos_path, class: "action-button" %>
 
-  <%= button_to "Destroy this transacao", @transacao, method: :delete %>
+  <%= button_to "Deletar", @transacao, method: :delete, class: "delete-button" %>
 </div>

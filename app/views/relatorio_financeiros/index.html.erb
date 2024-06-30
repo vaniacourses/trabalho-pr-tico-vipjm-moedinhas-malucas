@@ -1,13 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Relatorio financeiros</h1>
+<h1 class="page-title">Relatorio financeiros</h1>
 
-<div id="relatorio_financeiros">
+<div id="relatorio_financeiros" class="account-list">
   <% @relatorio_financeiros.each do |relatorio_financeiro| %>
+  <div class="account-item">
     <%= render relatorio_financeiro %>
     <p>
-      <%= link_to "Show this relatorio financeiro", relatorio_financeiro %>
+      <%= link_to "Detalhes", relatorio_financeiro %>
     </p>
+  </div>
   <% end %>
 </div>
 

@@ -2,9 +2,9 @@
 
 <%= render @meta_financeira %>
 
-<div>
-  <%= link_to "Edit this meta financeira", edit_meta_financeira_path(@meta_financeira) %> |
-  <%= link_to "Back to meta financeiras", meta_financeiras_path %>
+<div class="account-actions">
+  <%= link_to "Editar", edit_meta_financeira_path(@meta_financeira), class: "action-button" %> |
+  <%= link_to "Voltar", meta_financeiras_path, class: "action-button" %>
 
-  <%= button_to "Destroy this meta financeira", @meta_financeira, method: :delete %>
+  <%= button_to "Deletar", @meta_financeira, method: :delete, class: "delete-button" %>
 </div>

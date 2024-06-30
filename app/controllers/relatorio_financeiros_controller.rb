@@ -26,7 +26,7 @@ class RelatorioFinanceirosController < ApplicationController
 
     respond_to do |format|
       if @relatorio_financeiro.save
-        format.html { redirect_to relatorio_financeiro_url(@relatorio_financeiro), notice: "Relatorio financeiro was successfully created." }
+        format.html { redirect_to relatorio_financeiro_url(@relatorio_financeiro), notice: "Relatorio financeiro criado com sucesso." }
         format.json { render :show, status: :created, location: @relatorio_financeiro }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class RelatorioFinanceirosController < ApplicationController
   def update
     respond_to do |format|
       if @relatorio_financeiro.update(relatorio_financeiro_params)
-        format.html { redirect_to relatorio_financeiro_url(@relatorio_financeiro), notice: "Relatorio financeiro was successfully updated." }
+        format.html { redirect_to relatorio_financeiro_url(@relatorio_financeiro), notice: "Relatorio financeiro atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @relatorio_financeiro }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class RelatorioFinanceirosController < ApplicationController
     @relatorio_financeiro.destroy!
 
     respond_to do |format|
-      format.html { redirect_to relatorio_financeiros_url, notice: "Relatorio financeiro was successfully destroyed." }
+      format.html { redirect_to relatorio_financeiros_url, notice: "Relatorio financeiro deletado com sucesso." }
       format.json { head :no_content }
     end
   end

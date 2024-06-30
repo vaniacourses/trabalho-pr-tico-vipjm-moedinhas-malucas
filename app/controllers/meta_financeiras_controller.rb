@@ -23,10 +23,10 @@ class MetaFinanceirasController < ApplicationController
   # POST /meta_financeiras or /meta_financeiras.json
   def create
     @meta_financeira = current_user.meta_financeiras.build(meta_financeira_params)
-  
+
     respond_to do |format|
       if @meta_financeira.save
-        format.html { redirect_to @meta_financeira, notice: 'meta_financeira was successfully created.' }
+        format.html { redirect_to @meta_financeira, notice: 'Meta financeira criada com sucesso.' }
         format.json { render :show, status: :created, location: @meta_financeira }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class MetaFinanceirasController < ApplicationController
   def update
     respond_to do |format|
       if @meta_financeira.update(meta_financeira_params)
-        format.html { redirect_to meta_financeira_url(@meta_financeira), notice: "Meta financeira was successfully updated." }
+        format.html { redirect_to meta_financeira_url(@meta_financeira), notice: "Meta financeira atualizada com sucesso." }
         format.json { render :show, status: :ok, location: @meta_financeira }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class MetaFinanceirasController < ApplicationController
     @meta_financeira.destroy!
 
     respond_to do |format|
-      format.html { redirect_to meta_financeiras_url, notice: "Meta financeira was successfully destroyed." }
+      format.html { redirect_to meta_financeiras_url, notice: "Meta financeira deletada com sucesso" }
       format.json { head :no_content }
     end
   end

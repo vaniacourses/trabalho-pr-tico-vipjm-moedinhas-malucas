@@ -1,37 +1,39 @@
-<div id="<%= dom_id transacao %>">
-  <p>
-    <strong>Nome da Conta:</strong>
-    <%= @transacao.account.nomeConta %>
-  </p>
-  
-  <p>
-    <strong>Tipo:</strong>
-    <%= transacao.tipo %>
-  </p>
+<div class="account-list">
+  <div id="<%= dom_id transacao %>" class="account-item">
+    <p>
+      <strong>Nome da Conta:</strong>
+      <%= @transacao.account.nomeConta %>
+    </p>
+    
+    <p>
+      <strong>Tipo:</strong>
+      <%= transacao.tipo %>
+    </p>
 
-  <p>
-    <strong>Valor:</strong>
-    <%= transacao.valor %>
-  </p>
+    <p>
+      <strong>Valor:</strong>
+      <%= transacao.valor %>
+    </p>
 
-  <p>
-    <strong>Datahora:</strong>
-    <%= transacao.dataHora %>
-  </p>
+    <p>
+      <strong>Datahora:</strong>
+      <%= transacao.dataHora %>
+    </p>
 
-  <p>
-    <strong>Categoria:</strong>
-    <%= transacao.categoria %>
-  </p>
+    <p>
+      <strong>Categoria:</strong>
+      <%= transacao.categoria %>
+    </p>
 
-  <p>
-    <strong>Cliente:</strong>
-    <%= transacao.user_id %>
-  </p>
+    <p>
+      <strong>Cliente:</strong>
+      <%= transacao.user_id %>
+    </p>
 
-  <p>
-    <strong>Account:</strong>
-    <%= transacao.account_id %>
-  </p>
+    <p>
+      <strong>Conta:</strong>
+      <%= transacao.account_id %>
+    </p>
 
+  </div>
 </div>

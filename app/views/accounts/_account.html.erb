@@ -1,17 +1,18 @@
-<div id="<%= dom_id account %>">
-  <p>
-    <strong>Nome da Conta:</strong>
-    <%= account.nomeConta %>
-  </p>
+<div id="accounts" class="account-list">
+  <div id="<%= dom_id(account) %>" class="account-item">
+    <p>
+      <strong>Nome da Conta:</strong>
+      <%= account.nomeConta %>
+    </p>
 
-  <p>
-    <strong>Saldo:</strong>
-    <%= account.saldo %>
-  </p>
+    <p>
+      <strong>Saldo:</strong>
+      <%= account.saldo %>
+    </p>
 
-  <p>
-    <strong>Cliente:</strong>
-    <%= account.user_id %>
-  </p>
-
+    <p>
+      <strong>Cliente:</strong>
+      <%= account.user_id %>
+    </p>
+  </div>
 </div>

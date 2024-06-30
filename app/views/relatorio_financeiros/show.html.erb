@@ -2,9 +2,9 @@
 
 <%= render @relatorio_financeiro %>
 
-<div>
-  <%= link_to "Edit this relatorio financeiro", edit_relatorio_financeiro_path(@relatorio_financeiro) %> |
-  <%= link_to "Back to relatorio financeiros", relatorio_financeiros_path %>
+<div class="account-actions">
+  <%= link_to "Edit this relatorio financeiro", edit_relatorio_financeiro_path(@relatorio_financeiro), class: "action-button"  %> |
+  <%= link_to "Back to relatorio financeiros", relatorio_financeiros_path, class: "action-button"  %>
 
-  <%= button_to "Destroy this relatorio financeiro", @relatorio_financeiro, method: :delete %>
+  <%= button_to "Destroy this relatorio financeiro", @relatorio_financeiro, method: :delete, class: "delete-button" %>
 </div>

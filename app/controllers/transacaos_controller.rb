@@ -27,23 +27,23 @@ class TransacaosController < ApplicationController
   # POST /transacaos or /transacaos.json
   def create
     @transacao = current_user.transacaos.build(transacao_params)
-  
+
     respond_to do |format|
       if @transacao.save
-        format.html { redirect_to @transacao, notice: 'Transacao was successfully created.' }
+        format.html { redirect_to @transacao, notice: 'Transacao criada com sucesso.' }
         format.json { render :show, status: :created, location: @transacao }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @transacao.errors, status: :unprocessable_entity }
       end
     end
-  end  
+  end
 
   # PATCH/PUT /transacaos/1 or /transacaos/1.json
   def update
     respond_to do |format|
       if @transacao.update(transacao_params)
-        format.html { redirect_to transacao_url(@transacao), notice: "Transacao was successfully updated." }
+        format.html { redirect_to transacao_url(@transacao), notice: "Transacao atualizada com sucesso." }
         format.json { render :show, status: :ok, location: @transacao }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class TransacaosController < ApplicationController
     @transacao.destroy!
 
     respond_to do |format|
-      format.html { redirect_to transacaos_url, notice: "Transacao was successfully destroyed." }
+      format.html { redirect_to transacaos_url, notice: "Transacao deletada com sucesso." }
       format.json { head :no_content }
     end
   end

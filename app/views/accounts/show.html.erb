@@ -2,9 +2,8 @@
 
 <%= render @account %>
 
-<div>
-  <%= link_to "Edit this account", edit_account_path(@account) %> |
-  <%= link_to "Back to accounts", accounts_path %>
-
-  <%= button_to "Destroy this account", @account, method: :delete %>
+<div class="account-actions">
+  <%= link_to "Editar", edit_account_path(@account), class: "action-button" %> |
+  <%= link_to "Voltar", accounts_path, class: "action-button" %>
+  <%= button_to "Deletar conta", @account, method: :delete, class: "delete-button" %>
 </div>

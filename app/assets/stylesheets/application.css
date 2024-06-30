@@ -12803,3 +12803,95 @@ textarea.form-control-lg {
 [data-bs-theme=dark] .toast-header {
   color: #fff;
 }
+
+.account-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.account-item {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.account-item:hover {
+  transform: scale(1.02);
+}
+
+.account-details-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.account-details-link a:hover {
+  text-decoration: underline;
+}
+
+.account-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.action-button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Efeito ao passar o mouse */
+.custom-nova-conta-btn:hover {
+  transform: scale(1.1); 
+  border-radius: 50px;
+  box-shadow: 0px 1px 5px green;
+}
+.custom-logout-btn:hover {
+  transform: scale(1.1); 
+  border-radius: 50px;
+  box-shadow: 0px 1px 5px red;
+}
+
+.page-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
