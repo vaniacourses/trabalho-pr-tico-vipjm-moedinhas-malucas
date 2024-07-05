@@ -7,24 +7,44 @@
 
 <p style="color: green"><%= notice %></p>
 
+<div class="d-flex justify-content-center align-items-center">
+  <%= image_tag 'rf.png', width: '75', height: '75' %>
+</div>
+
 <h1 class="page-title">Relatorio financeiros</h1>
 
-<div id="relatorio_financeiros" class="account-list">
-  <% @relatorio_financeiros.each do |relatorio_financeiro| %>
-  <div class="account-item">
-    <%= render relatorio_financeiro %>
-    <p>
-      <%= link_to "Detalhes", relatorio_financeiro %>
-    </p>
+<div id="relatorio_financeiros" class="account-list construction-warning-wrapper">
+  <div class="construction-warning-container">
+    <div class="alert alert-warning construction-warning">
+      <%= image_tag 'alert.png', width: '75', height: '75' %><br><br>
+      <strong>Aviso:</strong> Esta parte está em construção. Por favor, volte mais tarde.
+    </div>
   </div>
-  <% end %>
 </div>
 
-<div class="row justify-content-center mt-5">
-  <%= link_to 'Novo relatorio financeiro', new_relatorio_financeiro_path, class: "btn btn-success btn-block custom-nova-rf-btn", style:"width:15vw; background-color: green; color: white; border: 2px solid transparent; transition: all 0.3s ease;" %>
-</div>
-<br><br>
-<div style="text-align: center;">
-  <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-block custom-logout-btn", style:"background-color: red; color: white; border: 2px solid transparent; transition: all 0.3s ease;" %>
-</div>
+<style>
+  .construction-warning-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Ocupa 100% da altura da viewport */
+    text-align: center;
+  }
+
+  .construction-warning-container {
+    max-width: 600px;
+  }
+
+  .construction-warning {
+    background-color: #ffcc00; /* Cor de fundo do aviso */
+    color: #333; /* Cor do texto */
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 1.2em;
+    border: 1px solid #ffcc00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+</style>
+
 

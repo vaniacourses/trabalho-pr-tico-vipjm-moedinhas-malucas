@@ -6,15 +6,24 @@
 
 <p style="color: green"><%= notice %></p>
 
+<div class="d-flex justify-content-center align-items-center">
+  <%= image_tag 'mf.png', width: '75', height: '75' %>
+</div>
+
 <h1 class="page-title">Meta financeiras</h1>
 
 <div id="meta_financeiras" class="account-list">
   <% @meta_financeiras.each do |meta_financeira| %>
     <div class="account-item">
-    <%= render meta_financeira %>
-    <p class="account-details-link">
-      <%= link_to "Detalhes", meta_financeira %>
-    </p>
+      <p class="card-text"><strong>Nome da Meta:</strong> <%= meta_financeira.nome %></p>
+      <p class="card-text"><strong>Descrição:</strong> <%= meta_financeira.descricao %></p>
+      <p class="card-text"><strong>Valor:</strong> <%= number_to_currency(meta_financeira.valor, unit: "R$", precision: 2, delimiter: ".", separator: ",") %></p>
+      <p class="card-text"><strong>Prazo:</strong> <%= l(meta_financeira.prazo, format: :short) %></p>
+      <div class="account-actions">
+        <%= link_to 'Mostrar', meta_financeira, class: "action-button" %>
+        <%= link_to 'Editar', edit_meta_financeira_path(meta_financeira), class: "action-button"%>
+        <%= button_to 'Excluir', meta_financeira_path(meta_financeira), method: :delete, data: { confirm: 'Tem certeza?' }, class: "delete-button" %>
+      </div>
     </div>
   <% end %>
 </div>
